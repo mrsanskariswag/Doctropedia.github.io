@@ -1,0 +1,78 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Log In Form</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+        content="login form" />
+    <!-- //Meta tag Keywords -->
+     <link rel="stylesheet" href="assets/css/login.css" type="text/css" media="all" /><!-- Style-CSS -->
+</head>
+<body>
+   <!-- /form-26-section -->
+   <section class="form-26">
+         <div class="form-26-mian">
+				<div class="layer">
+			<div class="wrapper">
+			<div class="form-inner-cont">
+					<div class="forms-26-info">
+						 <h2>Login</h2>
+                        <p>Log In Your Account</p>
+                    </div>
+					<div class="form-right-inf"> 
+							<form action="" method="post">	
+							 <div class="forms-gds">
+								<div  class="form-input">
+									<input type="email" name="" placeholder="Email" required />
+								</div>
+								<div  class="form-input">
+									<input type="password" name="" placeholder="Password" required />
+								</div>
+								<div  class="form-input"><button class="btn">Login</button></div>
+							</div>
+							<h6 class="already"> Dont have an account? <a href="SignUp.html"><span>Register Here<span></span></span></a></h6>
+						</form>
+						
+
+						<?php
+						if(isset($_POST['submit']))
+						{
+							$email =$_POST['Email'];
+							$pwd =$_POST['Password'];
+							$query = "SELECT * FROM userdata WHERE username='$email' && password='$pwd'";
+
+							$data = mysqli_query($conn , $query); 
+
+							if($query)
+							{
+								echo "login SuccessFully";
+							}
+							else 
+							{
+								echo "Login Failed";
+							}
+
+						}
+						?>
+						</div>
+						<div class="copyright text-center">
+                   <p class="copy-footer-28 text-center"> &copy; 2020 Market. All Rights Reserved. Design by <a href="assets/images/About Us.jpeg">Shivam patel & Alish Findoliya</a></p>
+                </div>
+                </div>
+			
+			</div>
+		</div>
+		    </div>
+		</section>
+</body>
+</html>
